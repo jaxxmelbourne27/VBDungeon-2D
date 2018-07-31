@@ -29,17 +29,17 @@ Public Class Form1
         Dim strarray(1, 1) As String
 
         If File.Exists(map) Then
-            Dim tmpstream As StreamReader = File.OpenText(map)
-            Dim strlines() As String
-            Dim strline() As String
-            strlines = tmpstream.ReadToEnd().Split(Environment.NewLine)
-            strline = strlines(0).Split(",")
+            Dim temp As StreamReader = File.OpenText(map)
+            Dim lines() As String
+            Dim line() As String
+            lines = temp.ReadToEnd().Split(Environment.NewLine)
+            line = lines(0).Split(",")
             ReDim screen(15, 15)
 
             For y = 0 To 15
-                strline = strlines(y).Split(",")
+                line = lines(y).Split(",")
                 For x = 0 To 15
-                    screen(x, y) = strline(x)
+                    screen(x, y) = line(x)
                 Next
             Next
         End If
